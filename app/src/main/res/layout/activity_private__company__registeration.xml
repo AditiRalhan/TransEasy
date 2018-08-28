@@ -66,6 +66,7 @@
                 android:src="@drawable/square" />
 
             <EditText
+                android:id="@+id/PC_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentTop="true"
@@ -78,6 +79,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
+                android:id="@+id/PC_address"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentTop="true"
@@ -90,6 +92,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
+                android:id="@+id/PC_phone"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentTop="true"
@@ -153,7 +156,8 @@
                 android:background="#311B92"
                 android:fontFamily="sans-serif-medium"
                 android:text="SIGN UP"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="SignUp"/>
 
         </LinearLayout>
 

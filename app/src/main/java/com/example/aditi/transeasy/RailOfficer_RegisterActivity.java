@@ -6,10 +6,13 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class RailOfficer_RegisterActivity extends AppCompatActivity
 {
+    String name,address,phone_number;
+    EditText etName,etAddress,etPhone;
     ImageView mImageView;
     private static final int PICK_IMAGE = 100;
     @Override
@@ -18,6 +21,9 @@ public class RailOfficer_RegisterActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rail_officer__register);
         mImageView = (ImageView) findViewById(R.id.imgView_companyLogo);
+        etName=(EditText)findViewById(R.id.Rofficer_name);
+        etAddress=(EditText)findViewById(R.id.Rofficer_address);
+        etPhone=(EditText)findViewById(R.id.Rofficer_phone);
     }
 
     public void selectImage(View view) {
@@ -26,12 +32,46 @@ public class RailOfficer_RegisterActivity extends AppCompatActivity
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK)
+        {
             Uri photo = data.getData();
             mImageView.setImageURI(photo);
         }
+    }
 
+    public void signUp(View view)
+    {
+        name= etName.getText().toString().trim();
+        address=etAddress.getText().toString().trim();
+        phone_number=etPhone.getText().toString().trim();
+
+        if (name.isEmpty())
+        {
+            etName.setError("Name Required");
+            etName.requestFocus();
+            return;
+        }
+        if(address.isEmpty())
+        {
+            etAddress.setError("Address Required");
+            etAddress.requestFocus();
+            return;
+        }
+
+        if (phone_number.isEmpty())
+        {
+            etPhone.setError("Phone Number Required");
+            etPhone.requestFocus();
+            return;
+        }
+        if (phone_number.length() != 10)
+        {
+            etPhone.setError("Enter a valid number");
+            etPhone.requestFocus();
+            return;
+        }
     }
 }

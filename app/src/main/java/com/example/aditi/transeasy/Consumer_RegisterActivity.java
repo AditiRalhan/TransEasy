@@ -6,17 +6,23 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class Consumer_RegisterActivity extends AppCompatActivity {
 
     ImageView mImageView;
     private static final int PICK_IMAGE = 100;
+    String name,address,phone_number;
+    EditText etName,etAddress,etPhone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consumer__register);
         mImageView = (ImageView) findViewById(R.id.imgView_companyLogo);
+        etName=(EditText)findViewById(R.id.C_name);
+        etAddress=(EditText)findViewById(R.id.C_address);
+        etPhone=(EditText)findViewById(R.id.C_phone);
     }
 
     public void selectImage(View view) {
@@ -34,4 +40,37 @@ public class Consumer_RegisterActivity extends AppCompatActivity {
 
     }
 
+    public void Signup(View view)
+    {
+        name= etName.getText().toString().trim();
+        address=etAddress.getText().toString().trim();
+        phone_number=etPhone.getText().toString().trim();
+
+        if (name.isEmpty())
+        {
+            etName.setError("Name Required");
+            etName.requestFocus();
+            return;
+        }
+        if(address.isEmpty())
+        {
+            etAddress.setError("Address Required");
+            etAddress.requestFocus();
+            return;
+        }
+
+        if (phone_number.isEmpty())
+        {
+            etPhone.setError("Phone Number Required");
+            etPhone.requestFocus();
+            return;
+        }
+        if (phone_number.length() != 10)
+        {
+            etPhone.setError("Enter a valid number");
+            etPhone.requestFocus();
+            return;
+        }
+    }
 }
+

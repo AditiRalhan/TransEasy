@@ -36,8 +36,7 @@
             android:theme="@style/Login" />
         <activity
             android:name=".Private_CompanyActivity"
-            android:label="@string/title_activity_private__company"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Login" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -54,9 +53,12 @@
             android:name=".Private_Trucks_MapsActivity"
             android:label="@string/title_activity_private__trucks__maps"
             android:theme="@style/Login" />
-        <activity android:name=".Port_Officer_RegisterActivity" />
-        <activity android:name=".Consumer_RegisterActivity" />
-        <activity android:name=".RailOfficer_RegisterActivity"></activity>
+        <activity android:name=".Port_Officer_RegisterActivity"
+            android:theme="@style/Login"/>
+        <activity android:name=".Consumer_RegisterActivity"
+            android:theme="@style/Login"/>
+        <activity android:name=".RailOfficer_RegisterActivity"
+            android:theme="@style/Login"></activity>
     </application>
 
 </manifest>
