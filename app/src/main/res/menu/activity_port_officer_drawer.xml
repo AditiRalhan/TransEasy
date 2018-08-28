@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/tt_port"
+            android:title="Track Trucks" />
+        <item
+            android:id="@+id/portNotification"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/portDT"
+            android:title="Dwell Time" />
+        <item
+            android:id="@+id/portEsti"
+            android:title="Estimation" />
+
+    </group>
+
+    <item
+        android:id="@+id/Logout"
+        android:title="Logout" />
+</menu>
