@@ -95,21 +95,33 @@ public class RegisterActivity extends AppCompatActivity  {
      if(text.equals("Port Officer"))
         {
             Intent i = new Intent(RegisterActivity.this,Port_Officer_RegisterActivity.class);
+            i.putExtra("email",email);
+            i.putExtra("password",password);
+            i.putExtra("user_type",text);
             startActivity(i);
         }
         else if(text.equals("Private Company"))
         {
             Intent i = new Intent(RegisterActivity.this,Private_Company_RegisterationActivity.class);
+            i.putExtra("email",email);
+            i.putExtra("password",password);
+            i.putExtra("user_type",text);
             startActivity(i);
         }
         else if(text.equals("Railway Officer"))
         {
             Intent i = new Intent(RegisterActivity.this,RailOfficer_RegisterActivity.class);
+            i.putExtra("email",email);
+            i.putExtra("password",password);
+            i.putExtra("user_type",text);
             startActivity(i);
         }
         else if(text.equals("Customer"))
         {
             Intent i = new Intent(RegisterActivity.this,Consumer_RegisterActivity.class);
+            i.putExtra("email",email);
+            i.putExtra("password",password);
+            i.putExtra("user_type",text);
             startActivity(i);
         }
 

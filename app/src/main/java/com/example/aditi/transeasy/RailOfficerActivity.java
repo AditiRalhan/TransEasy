@@ -1,6 +1,5 @@
 package com.example.aditi.transeasy;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -15,23 +14,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Private_CompanyActivity extends AppCompatActivity
+public class RailOfficerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     String img_uri,name;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_private__company);
-
-        Bundle extras= getIntent().getExtras();
-        img_uri=extras.getString("logo");
-        name=extras.getString("name");
-
+        setContentView(R.layout.activity_rail_officer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -39,15 +30,14 @@ public class Private_CompanyActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View header=navigationView.getHeaderView(0);
         ImageView img= (ImageView)header.findViewById(R.id.privateCompanyLogo) ;
-
-         img.setImageURI(Uri.parse(img_uri));
+        img.setImageURI(Uri.parse(img_uri));
         TextView tx =(TextView)header.findViewById(R.id.tx_com);
         tx.setText(name);
-
     }
 
     @Override
@@ -63,7 +53,7 @@ public class Private_CompanyActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.private__company, menu);
+        getMenuInflater().inflate(R.menu.rail_officer, menu);
         return true;
     }
 
@@ -75,7 +65,7 @@ public class Private_CompanyActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.lang) {
+        if (id == R.id.lang2) {
             return true;
         }
 
@@ -88,24 +78,16 @@ public class Private_CompanyActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.tt_pos)
-        {
-            Intent i = new Intent(Private_CompanyActivity.this,Private_Trucks_MapsActivity.class);
-            startActivity(i);
-        }
-        else if (id == R.id.privateCompanyHistory)
-        {
+        if (id == R.id.platform_1) {
+            // Handle the camera action
+        } else if (id == R.id.platform_2) {
+
+        } else if (id == R.id.no_of_wagons) {
+
+        } else if (id == R.id.Logout) {
 
         }
-        else if (id == R.id.privateCompanyUpcoming)
-        {
 
-        }
-        else if (id == R.id.Logout)
-        {
-         Intent i = new Intent(Private_CompanyActivity.this,LoginActivity.class);
-         startActivity(i);
-        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

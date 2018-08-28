@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
 
     <application
         android:allowBackup="true"
@@ -53,12 +55,25 @@
             android:name=".Private_Trucks_MapsActivity"
             android:label="@string/title_activity_private__trucks__maps"
             android:theme="@style/Login" />
-        <activity android:name=".Port_Officer_RegisterActivity"
-            android:theme="@style/Login"/>
-        <activity android:name=".Consumer_RegisterActivity"
-            android:theme="@style/Login"/>
-        <activity android:name=".RailOfficer_RegisterActivity"
-            android:theme="@style/Login"></activity>
+        <activity
+            android:name=".Port_Officer_RegisterActivity"
+            android:theme="@style/Login" />
+        <activity
+            android:name=".Consumer_RegisterActivity"
+            android:theme="@style/Login" />
+        <activity
+            android:name=".RailOfficer_RegisterActivity"
+            android:theme="@style/Login" />
+        <activity
+            android:name=".ConsumerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PortOfficerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RailOfficerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Company_PreviousBookingsActivity"></activity>
     </application>
 
 </manifest>

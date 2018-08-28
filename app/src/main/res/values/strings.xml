@@ -14,5 +14,8 @@
         <item>Railway Officer</item>
         <item>Customer</item>
     </string-array>
+    <string name="title_activity_consumer">ConsumerActivity</string>
+    <string name="title_activity_port_officer">PortOfficerActivity</string>
+    <string name="title_activity_rail_officer">RailOfficerActivity</string>
 
 </resources>
